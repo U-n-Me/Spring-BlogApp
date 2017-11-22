@@ -16,10 +16,13 @@ public class DBInitializer {
 	}
 
 	private void createColumnFamilies() {
-		String query = "CREATE TABLE IF NOT EXISTS blogSpace.Blogs( blogId text, blogData text, blogger text,"
-				+ " likes INT, PRIMARY KEY(blogId, likes )"
-				+ ") WITH CLUSTERING ORDER BY(likes DESC);";
+		String query = "CREATE TABLE IF NOT EXISTS blogSpace.BlogsMini( blogId text PRIMARY KEY,description text,"
+				+ "blogger text;";
+				//+ ") WITH CLUSTERING ORDER BY(likes DESC);";
 		cqlTemplate.execute(query);
+		
+		query = "CREATE TABLE IF NOT EXISTS blogSpace.Blogs(blogId text, blogData text, likes counter "
+				+ " PRIMARY KEY(blogId, blogData)) ;";
 		
 		query = "CREATE TABLE IF NOT EXISTS blogSpace.Bloggers(userId text PRIMARY KEY, "
 				+ "password text, blogs List<text>) ;";

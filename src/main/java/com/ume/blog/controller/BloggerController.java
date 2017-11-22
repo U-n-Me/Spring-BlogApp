@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ume.blog.lib.ApiResponseEntity;
+import com.ume.blog.lib.BloggerResponseEntity;
 import com.ume.blog.lib.CreateBloggerEntity;
 import com.ume.blog.services.BloggerService;
 
@@ -19,13 +21,13 @@ public class BloggerController {
 	
 	
 	@RequestMapping(path = "/blogger", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public CreateBloggerEntity createBlogger(@RequestBody CreateBloggerEntity blogger) {
+	public ApiResponseEntity<BloggerResponseEntity> createBlogger(@RequestBody CreateBloggerEntity blogger) {
 		System.out.println("Got request");
 		return bloggerService.createBlogger(blogger);
 	}
 
 	@RequestMapping(path = "/blogger/{userId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public CreateBloggerEntity getBlogger(@PathVariable String userId) {
+	public ApiResponseEntity<BloggerResponseEntity> getBlogger(@PathVariable String userId) {
 		return bloggerService.getBlogger(userId);
 	}
 }

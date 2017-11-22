@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateBlogEntity {
+	private String description;
 	private String blogData;
 	private String blogger;
-	private int likes;	
 }
