@@ -5,16 +5,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BlogResponseEntity {
+public class BlogGlimseEntity {
 	
-	private String blogId;
-	private String description;
-	private String blogData;
-	private String blogger;
-	private long likes;
+ private String blogId;
+ private String description;
+ private long likes;
+ private String blogger;
+ 
 }

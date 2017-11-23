@@ -16,13 +16,14 @@ public class DBInitializer {
 	}
 
 	private void createColumnFamilies() {
-		String query = "CREATE TABLE IF NOT EXISTS blogSpace.BlogsMini( blogId text PRIMARY KEY,description text,"
-				+ "blogger text;";
+		String query = "CREATE TABLE IF NOT EXISTS blogSpace.Blogs( blogId text, description text,"
+				+ "blogData text, blogger text,"
+				+ " PRIMARY KEY(blogId, blogger));";
 				//+ ") WITH CLUSTERING ORDER BY(likes DESC);";
 		cqlTemplate.execute(query);
 		
-		query = "CREATE TABLE IF NOT EXISTS blogSpace.Blogs(blogId text, blogData text, likes counter "
-				+ " PRIMARY KEY(blogId, blogData)) ;";
+		query = "CREATE TABLE IF NOT EXISTS blogSpace.blogLikes (blogId text PRIMARY KEY, likes counter) ;";
+		cqlTemplate.execute(query);
 		
 		query = "CREATE TABLE IF NOT EXISTS blogSpace.Bloggers(userId text PRIMARY KEY, "
 				+ "password text, blogs List<text>) ;";
@@ -31,11 +32,8 @@ public class DBInitializer {
 		System.out.println("Tables created");
 	}
 
-	private void createKeySpace() {
-		String query = "DROP KEYSPACE IF EXISTS blogSpace;";
-		//cqlTemplate.execute(query);
-		
-		query = "CREATE KEYSPACE IF NOT EXISTS blogSpace WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor' : 1};";
+	private void createKeySpace() {		
+		String query = "CREATE KEYSPACE IF NOT EXISTS blogSpace WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor' : 1};";
 		cqlTemplate.execute(query);
 		System.out.println("Keyspace Created");
 	}
