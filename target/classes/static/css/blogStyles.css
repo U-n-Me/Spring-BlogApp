@@ -1,0 +1,90 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{	
+  top: 50px;
+  font-size: 26px;
+  font-family: cursive;
+  color: black;
+  background-color: #ddaaff;
+  letter-spacing: 5px;
+  word-spacing: 8px;
+  
+}
+
+header{
+	position: fixed;
+	top: 0;
+	width: 100%;
+  background: #c288fa;
+  box-shadow: 0 2px 5px #333;
+  display: flex;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+header > img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.menu-options > a{  
+  background: #d399fd;
+  color: white;
+  letter-spacing: 5px;
+  text-decoration: none;
+  margin-right: 1px;
+  display: inline-block;
+  padding: 10px;
+}
+
+.menu-options > a:last-of-type{
+  margin-right: 30px;
+}
+
+.menu-options > a:HOVER {
+  background: #d5aafd;
+}
+
+.container{
+	margin-top: 70px; 
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container > section{
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 95%;
+  text-align: center;  
+  border: 2px solid white;
+  cursor: pointer;
+} 
+
+.bloggerNlikes{
+	display: flex;
+	justify-content: space-between;
+}
+
+.blogger{
+	font-size: 1.2em;
+}
+
+.likes{
+	
+}
+
+input[type = "text"]{
+  padding: 10px 12px;
+  outline: none;
+  border: none;
+  border-left-radius: 100%;
+}

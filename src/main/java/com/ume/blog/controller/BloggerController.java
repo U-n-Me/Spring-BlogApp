@@ -20,13 +20,13 @@ public class BloggerController {
 	BloggerService bloggerService;
 	
 	
-	@RequestMapping(path = "/blogger", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(path = "/api/blogger", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ApiResponseEntity<BloggerResponseEntity> createBlogger(@RequestBody CreateBloggerEntity blogger) {
 		System.out.println("Got request");
 		return bloggerService.createBlogger(blogger);
 	}
 
-	@RequestMapping(path = "/blogger/{userId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(path = "/api/blogger/{userId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ApiResponseEntity<BloggerResponseEntity> getBlogger(@PathVariable String userId) {
 		return bloggerService.getBlogger(userId);
 	}

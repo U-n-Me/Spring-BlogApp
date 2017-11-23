@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+		<title>Start Page</title>
+		<link rel="stylesheet" href="css/blogStyles.css" />
+	</head>
+	<body>
+		<header>
+			<img src="images/VS.png" />
+			<div class="menu-options">
+				<a href="#">Write Blog</a> 
+				<a href="#" onclick="alert('Will implement login stuff soon');">Login</a>
+			</div>
+		</header>
+		
+		<div class = "container">
+		  <!-- <section>Hello there!</section>  -->
+		</div>
+	
+	
+		<script src="js/jQuery.js"></script> 
+		<script type="text/javascript">
+			$(function() {
+				var req = "api"+window.location.pathname;
+				alert(req);
+				$.getJSON(req, function(data){
+					renderData(data);
+				});
+			});
+	 
+			var container = $('.container');
+			function renderData(data){
+				if(data.status === 'SUCCESS'){
+					var blogs = data.details;
+					blogs.forEach(function(blog){
+						var section = $('<section onclick = "openURL(\'api/blog/'+blog.blogId+'\')"></section>');
+						section.append(blog.description);
+						var bloggerNlikes = $('<div class = "bloggerNlikes"></div>');
+						bloggerNlikes.append('<div class = "blogger">'+blog.blogger+'</div>');
+						bloggerNlikes.append('<div class = "likes">'+blog.likes+'</div>');
+						section.append(bloggerNlikes);
+						container.append(section);
+					});
+				}else{
+					alert("FAILURE");
+				}
+			}
+			
+			function openURL(url) {
+				alert(url);
+				window.location.href = url;
+			}
+		</script>
+	</body>
+</html>

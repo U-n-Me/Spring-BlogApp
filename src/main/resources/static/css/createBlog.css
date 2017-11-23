@@ -1,0 +1,107 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  position: relative;
+  top: 80px;
+  font-size: 16px;
+  font-family: cursive;
+  color: black;
+  background-color: white;
+  letter-spacing: 3px;
+  word-spacing: 5px;
+  
+}
+
+header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #43D1AF;
+  box-shadow: 0 2px 5px #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+header > img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.menu-options > a{  
+  background: #30B09A;
+  color: white;
+  letter-spacing: 5px;
+  text-decoration: none;
+  margin-right: 1px;
+  display: inline-block;
+  padding: 10px;
+}
+
+.menu-options > a:last-of-type{
+  margin-right: 30px;
+}
+
+.menu-options > a:HOVER {
+  background: #55F2BA;
+}
+
+.container{
+  background: #333;
+  width: 95%;
+  margin: 10px auto;
+  padding: 5px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 2px solid black;
+}
+
+.container p {
+  background: #30B09A;
+  width: 95%;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 150%;
+  font-weight: 200;
+}
+
+input[type = "text"]{
+  padding: 10px 10px;
+  margin: 5px;
+  width: 300px;
+}
+
+textarea{
+  padding: 10px 10px;
+  height: 400px;
+  width: 90%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 4px solid #444;
+  
+}
+
+input[type = "submit"]{
+  background: #43D1AF;
+  padding: 5px 15px;
+  font-size: 140%;
+  font-weight: 200;
+  text-align: center;
+  margin: 5px 0 10px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type = "submit"]:active{
+  transform: translate(2px, 2px);
+}
