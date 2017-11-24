@@ -22,7 +22,7 @@ public class BlogController {
 	@Autowired
 	BlogServices blogService;	
 
-	@RequestMapping(path = "/api//blog", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(path = "/api/blog", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ApiResponseEntity<BlogResponseEntity> createBlog(@RequestBody CreateBlogEntity blog) {
 		System.out.println("Got request");
 		return blogService.createBlog(blog);

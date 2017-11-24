@@ -20,37 +20,6 @@
 	
 	
 		<script src="js/jQuery.js"></script> 
-		<script type="text/javascript">
-			$(function() {
-				var req = "api"+window.location.pathname;
-				alert(req);
-				$.getJSON(req, function(data){
-					renderData(data);
-				});
-			});
-	 
-			var container = $('.container');
-			function renderData(data){
-				if(data.status === 'SUCCESS'){
-					var blogs = data.details;
-					blogs.forEach(function(blog){
-						var section = $('<section onclick = "openURL(\'api/blog/'+blog.blogId+'\')"></section>');
-						section.append(blog.description);
-						var bloggerNlikes = $('<div class = "bloggerNlikes"></div>');
-						bloggerNlikes.append('<div class = "blogger">'+blog.blogger+'</div>');
-						bloggerNlikes.append('<div class = "likes">'+blog.likes+'</div>');
-						section.append(bloggerNlikes);
-						container.append(section);
-					});
-				}else{
-					alert("FAILURE");
-				}
-			}
-			
-			function openURL(url) {
-				alert(url);
-				window.location.href = url;
-			}
-		</script>
+		<script src="js/startPage.js"></script>
 	</body>
 </html>

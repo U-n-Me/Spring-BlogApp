@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	  <title>Add Blog</title>
+	  <link rel="stylesheet" href="css/createBlog.css" />
+  </head>
+  <body>
+    <header>
+     <img src = "images/VS.png"/>
+     <div class = "menu-options">
+      <a href = "#">YOUR BLOGS</a> 
+      <a href = "#" onclick="alert('Will implement login stuff soon');">LOGIN</a>
+     </div>
+    </header>
+  
+    <div class = "fk">
+      <form action = "" method = "post" class = "container">
+          <p>WRITE YOUR BLOG</p>
+          <input type = "text" name = "blogger" placeholder = "YOUR NAME/NICKNAME" required="Fill This" />
+          <input type = "text" name = "description" placeholder = "BLOG TITLE" required="Fill This" />
+        <div style = "width: 100%; text-align: center;">  
+          <textarea name = "blogData" placeholder = "YOUR BLOG" required="Fill This" ></textarea><br />
+          <input type = "submit" value = "SUBMIT" />
+         </div>
+      </form>
+    </div> 
+  
+   <script src="js/jQuery.js"></script>
+   <script type="text/javascript">
+    $(function(){
+    	$('form').submit(function(evt){
+    		alert($('form').serializeJSON());
+    	});
+    });
+   </script>
+  </body>
+</html>

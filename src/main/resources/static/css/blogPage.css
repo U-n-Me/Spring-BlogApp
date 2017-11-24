@@ -97,6 +97,10 @@ article{
   text-align: center;
 }
 
+.fa{
+	cursor: pointer;
+}
+
 .comments{
   width: 80%;
 }

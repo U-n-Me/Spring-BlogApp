@@ -7,12 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UIController {
 
     @RequestMapping("/allblogs")
-    public String greeting() {
+    public String allBlogs() {
         return "startPage";
     }
     
-    @RequestMapping("/allblogs/@ume")
-    public String bloggerBlogs() {
-        return "startPage";
+    @RequestMapping("/blog")
+    public String blogPage() {
+        return "blogPage";
+    }    
+
+    @RequestMapping("/newBlog")
+    public String createBlog() {
+        return "createBlog";
     }
 }

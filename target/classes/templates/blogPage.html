@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	  <title>Add Blog</title>
+	  <link rel="stylesheet" href="css/blogPage.css" />
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+	</head>
+	<body>
+	   <header>
+     <img src = "images/VS.png"/>
+     <div class = "menu-options">
+      <a href = "allblogs">HOME PAGE</a> 
+      <a href = "#" onclick="alert('Will implement this stuff soon');">CREATE BLOG</a>
+     </div>
+    </header>
+  
+    <div class = "container">
+     
+      <p>By Blogger</p>
+      <section>Blog Title</section>
+      <article>Here comes your blog data. </article>
+      <div class = "like"><i class = "fa fa-heart" onclick = "likeBlog()"></i><span></span></div>
+      
+      <div class = "comments">
+        HATE AND PRAISE:           
+        <div class = "comment">
+          <p>I love this one.</p>
+          <p class = "commentor"> Ussas</p>
+        </div>
+                  
+        <div class = "comment">
+          <p>Another praise from me.</p>
+          <p class = "commentor"> Ussas</p>
+        </div>
+      </div>
+      
+      <div style = "width: 80%;">
+        <form action = "?blogId=4645-gj" method = "post">
+          <input type = "text" name = "commentor" placeholder = "COMMENTOR" required="Fill This"/><br />
+          <textarea name = "comment" placeholder = "COMMENT" required="Fill This"></textarea><br />
+          <input type = "submit" value = "COMMENT"/>
+        </form>
+       </div>
+     </div> 
+        
+   <script src="js/jQuery.js"></script>
+   <script src="js/blogPage.js"></script>
+	</body>
+</html>
